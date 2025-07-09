@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Impact Program - MIT Youth Advocacy</title>
+    <meta name="description" content="Youth-led research and advocacy program integrating AI tools for community impact" />
+    
+    <style>
+        :root {
+            --primary-color: #4c6ef5;
+            --secondary-color: #40c057;
+            --accent-color: #fd7e14;
+            --dark-color: #343a40;
+            --light-color: #f8f9fa;
+            --text-color: #212529;
+            --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #f1f3f5;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color), #228be6);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+            flex-grow: 1;
+        }
+        
+        .welcome-section {
+            background-color: white;
+            border-radius: 15px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+        
+        .welcome-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .welcome-section p {
+            font-size: 1.1rem;
+            color: #495057;
+            margin-bottom: 1.5rem;
+        }
+        
+        .modules-grid {
+            display: grid;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .module-card {
+            background-color: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            border-left: 5px solid var(--primary-color);
+        }
+        
+        .module-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .module-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .module-number {
+            background-color: var(--primary-color);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.5rem;
+            margin-right: 1rem;
+        }
+        
+        .module-title h3 {
+            color: var(--dark-color);
+            margin-bottom: 0.25rem;
+        }
+        
+        .module-dates {
+            font-size: 0.9rem;
+            color: #6c757d;
+        }
+        
+        .module-description {
+            color: #495057;
+            margin-bottom: 1rem;
+        }
+        
+        .module-status {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        
+        .status-available {
+            background-color: #e7f5ff;
+            color: #1864ab;
+        }
+        
+        .status-coming-soon {
+            background-color: #f3f0ff;
+            color: #6741d9;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+        
+        .cta-button:hover {
+            background-color: #364fc7;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(76, 110, 245, 0.3);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: var(--dark-color);
+            color: white;
+            margin-top: 3rem;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .container {
+                padding: 2rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1>Social Impact Program</h1>
+        <p>Empowering youth to lead community research and create lasting change through data-driven advocacy</p>
+    </div>
+    
+    <div class="container">
+        <section class="welcome-section">
+            <h2>Welcome to the MIT Youth Advocacy Program</h2>
+            <p>
+                Join us in a transformative 12-week journey where you'll master research methods, 
+                leverage AI tools, and develop solutions to real community challenges. 
+                This program combines Youth Participatory Action Research (YPAR) with cutting-edge 
+                technology to amplify youth voices and drive meaningful change.
+            </p>
+            <p>
+                <strong>Program Duration:</strong> April 8 - June 26, 2025<br>
+                <strong>Meeting Schedule:</strong> Tuesdays & Thursdays, 4:00 - 6:00 PM
+            </p>
+        </section>
+        
+        <div class="modules-grid">
+            <!-- Module 1 -->
+            <a href="Module 1.html" class="module-card">
+                <div class="module-header">
+                    <div class="module-number">1</div>
+                    <div class="module-title">
+                        <h3>Research Foundations & Community Assessment</h3>
+                        <div class="module-dates">April 8 - April 17, 2025</div>
+                    </div>
+                </div>
+                <p class="module-description">
+                    Master the fundamentals of community-based research, ethical practices, 
+                    survey design, and data collection methods enhanced with AI tools. 
+                    Build the foundation for conducting impactful youth-led research.
+                </p>
+                <span class="module-status status-available">Ready to Start</span>
+            </a>
+            
+            <!-- Module 2 -->
+            <div class="module-card" style="opacity: 0.7; cursor: not-allowed;">
+                <div class="module-header">
+                    <div class="module-number">2</div>
+                    <div class="module-title">
+                        <h3>Data Analysis & AI-Powered Insights</h3>
+                        <div class="module-dates">April 22 - May 8, 2025</div>
+                    </div>
+                </div>
+                <p class="module-description">
+                    Learn to analyze survey data, identify patterns, and use AI tools for 
+                    deeper insights. Transform raw data into compelling narratives that 
+                    drive action and policy change.
+                </p>
+                <span class="module-status status-coming-soon">Coming Soon</span>
+            </div>
+            
+            <!-- Module 3 -->
+            <div class="module-card" style="opacity: 0.7; cursor: not-allowed;">
+                <div class="module-header">
+                    <div class="module-number">3</div>
+                    <div class="module-title">
+                        <h3>Solution Design & Implementation</h3>
+                        <div class="module-dates">May 13 - May 29, 2025</div>
+                    </div>
+                </div>
+                <p class="module-description">
+                    Design evidence-based interventions, create implementation plans, 
+                    and pilot solutions. Learn project management and community 
+                    engagement strategies for sustainable impact.
+                </p>
+                <span class="module-status status-coming-soon">Coming Soon</span>
+            </div>
+            
+            <!-- Module 4 -->
+            <div class="module-card" style="opacity: 0.7; cursor: not-allowed;">
+                <div class="module-header">
+                    <div class="module-number">4</div>
+                    <div class="module-title">
+                        <h3>Advocacy & Sustainable Impact</h3>
+                        <div class="module-dates">June 3 - June 26, 2025</div>
+                    </div>
+                </div>
+                <p class="module-description">
+                    Master advocacy techniques, policy communication, and sustainability 
+                    planning. Present findings to stakeholders and create lasting frameworks 
+                    for continued community impact.
+                </p>
+                <span class="module-status status-coming-soon">Coming Soon</span>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 3rem;">
+            <a href="Module 1.html" class="cta-button">Start Module 1</a>
+        </div>
+    </div>
+    
+    <footer>
+        <p>© 2025 MIT Youth Advocacy Program (YPAR with AI Integration)</p>
+        <p>Questions? Contact: javier@clubstride.org | (707) 204-3160</p>
+    </footer>
+</body>
+</html>
