@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Module 1: Research Foundations & Community Assessment</title>
+  <meta name="description" content="Module 1 Overview: Research Foundations, Ethics, Survey Design, and Data Collection" />
+
+  <style>
+    :root {
+      --primary-color: #4c6ef5;
+      --secondary-color: #40c057;
+      --accent-color: #fd7e14;
+      --dark-color: #343a40;
+      --light-color: #f8f9fa;
+      --text-color: #212529;
+      --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      --success-color: #37b24d;
+      --warning-color: #f59f00;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: var(--text-color);
+      background-color: #f1f3f5;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    header {
+      background: linear-gradient(135deg, var(--primary-color), #228be6);
+      color: #fff;
+      padding: 3rem;
+      text-align: center;
+      border-radius: 15px;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow);
+    }
+    
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+    }
+    
+    header h2 {
+      font-size: 1.5rem;
+      font-weight: 400;
+      margin-bottom: 1rem;
+      opacity: 0.9;
+    }
+    
+    header p {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      opacity: 0.9;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .date-box {
+      display: inline-block;
+      background-color: rgba(255, 255, 255, 0.2);
+      padding: 0.5rem 1rem;
+      border-radius: 30px;
+      font-weight: 500;
+      margin-top: 0.5rem;
+    }
+    
+    /* Module Overview Section */
+    .overview-section {
+      background-color: #fff;
+      border-radius: 15px;
+      padding: 2.5rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow);
+    }
+    
+    .section-title {
+      color: var(--primary-color);
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
+      position: relative;
+      padding-bottom: 0.5rem;
+    }
+    
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 3px;
+      background-color: var(--primary-color);
+    }
+    
+    /* Learning Objectives Grid */
+    .objectives-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    
+    .objective-card {
+      background-color: var(--light-color);
+      border-left: 4px solid var(--secondary-color);
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease;
+    }
+    
+    .objective-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .objective-card h3 {
+      color: var(--secondary-color);
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    
+    .objective-card p {
+      color: #495057;
+      font-size: 0.95rem;
+    }
+    
+    /* Sessions Grid */
+    .sessions-section {
+      background-color: #fff;
+      border-radius: 15px;
+      padding: 2.5rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow);
+    }
+    
+    .sessions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    
+    .session-card {
+      background-color: var(--light-color);
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+    
+    .session-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .session-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background-color: var(--primary-color);
+    }
+    
+    .session-number {
+      display: inline-block;
+      background-color: var(--primary-color);
+      color: #fff;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+    
+    .session-card h3 {
+      color: var(--dark-color);
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+    }
+    
+    .session-card p {
+      color: #495057;
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+    
+    .session-details {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid #e9ecef;
+    }
+    
+    .session-date {
+      font-size: 0.85rem;
+      color: #6c757d;
+    }
+    
+    .session-duration {
+      font-size: 0.85rem;
+      padding: 0.3rem 0.6rem;
+      border-radius: 20px;
+      background-color: var(--accent-color);
+      color: #fff;
+    }
+    
+    .session-status {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    
+    .status-completed {
+      background-color: var(--success-color);
+      color: #fff;
+    }
+    
+    .status-current {
+      background-color: var(--warning-color);
+      color: #fff;
+    }
+    
+    .status-upcoming {
+      background-color: #e9ecef;
+      color: #6c757d;
+    }
+    
+    /* Study Guide Card */
+    .study-guide-card {
+      background: linear-gradient(135deg, #7950f2, #6741d9);
+      color: #fff;
+      border-radius: 12px;
+      padding: 2rem;
+      margin-top: 2rem;
+      box-shadow: var(--shadow);
+      text-align: center;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+      text-decoration: none;
+      display: block;
+    }
+    
+    .study-guide-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(121, 80, 242, 0.3);
+    }
+    
+    .study-guide-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: #fff;
+    }
+    
+    .study-guide-card p {
+      margin-bottom: 1.5rem;
+      opacity: 0.9;
+      color: #fff;
+    }
+    
+    .study-guide-button {
+      display: inline-block;
+      background-color: rgba(255, 255, 255, 0.2);
+      color: #fff;
+      padding: 0.8rem 2rem;
+      border-radius: 30px;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+      border: 2px solid #fff;
+    }
+    
+    .study-guide-card:hover .study-guide-button {
+      background-color: #fff;
+      color: #7950f2;
+    }
+    
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 2rem;
+      background-color: var(--dark-color);
+      color: #fff;
+      border-radius: 15px;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .container {
+        padding: 15px;
+      }
+      
+      header {
+        padding: 2rem;
+      }
+      
+      header h1 {
+        font-size: 2rem;
+      }
+      
+      .sessions-grid,
+      .objectives-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .session-details {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <h1>Module 1</h1>
+      <h2>Research Foundations & Community Assessment</h2>
+      <p>
+        Master the fundamentals of community-based research, ethical practices, survey design, 
+        and data collection methods enhanced with AI tools. This module provides the foundation 
+        for conducting impactful youth-led research.
+      </p>
+      <div class="date-box">April 8 - April 17, 2025</div>
+    </header>
+    
+    <!-- Module Overview -->
+    <section class="overview-section">
+      <h2 class="section-title">Module Learning Objectives</h2>
+      <div class="objectives-grid">
+        <div class="objective-card">
+          <h3>🔬 Research Fundamentals</h3>
+          <p>Understand public health concepts, community needs assessments, and YPAR methodology</p>
+        </div>
+        
+        <div class="objective-card">
+          <h3>⚖️ Ethical Practices</h3>
+          <p>Master informed consent, confidentiality, data governance, and AI bias considerations</p>
+        </div>
+        
+        <div class="objective-card">
+          <h3>📊 Survey Design</h3>
+          <p>Create effective surveys using best practices and AI-assisted question generation</p>
+        </div>
+        
+        <div class="objective-card">
+          <h3>🎯 Data Collection</h3>
+          <p>Implement quantitative and qualitative methods with digital tools integration</p>
+        </div>
+        
+        <div class="objective-card">
+          <h3>🤖 AI Integration</h3>
+          <p>Leverage AI tools responsibly to enhance research efficiency and insights</p>
+        </div>
+        
+        <div class="objective-card">
+          <h3>👥 Team Collaboration</h3>
+          <p>Develop skills for effective teamwork and community engagement</p>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Sessions Section -->
+    <section class="sessions-section">
+      <h2 class="section-title">Module Sessions</h2>
+      
+      <div class="sessions-grid">
+        <!-- Session 1 -->
+        <a href="Module 1, Session 1.html" class="session-card">
+          <span class="session-status status-upcoming">Upcoming</span>
+          <div class="session-number">1</div>
+          <h3>Introduction to Research Frameworks</h3>
+          <p>
+            Explore foundational public health concepts, community needs assessments, 
+            and Youth Participatory Action Research (YPAR) methodology. Begin identifying 
+            local issues for investigation.
+          </p>
+          <div class="session-details">
+            <span class="session-date">Tuesday, April 8</span>
+            <span class="session-duration">1 hr 45 mins</span>
+          </div>
+        </a>
+        
+        <!-- Session 2 -->
+        <a href="Module 1, Session 2.html" class="session-card">
+          <span class="session-status status-upcoming">Upcoming</span>
+          <div class="session-number">2</div>
+          <h3>Ethics in Research & Survey Design with AI</h3>
+          <p>
+            Learn about research ethics, informed consent, and data governance. 
+            Introduction to effective survey design using AI-assisted question generation 
+            while avoiding bias.
+          </p>
+          <div class="session-details">
+            <span class="session-date">Thursday, April 10</span>
+            <span class="session-duration">2 hours</span>
+          </div>
+        </a>
+        
+        <!-- Session 3 -->
+        <a href="Module 1, Session 3.html" class="session-card">
+          <span class="session-status status-upcoming">Upcoming</span>
+          <div class="session-number">3</div>
+          <h3>Data Collection Methods & Digital Tools</h3>
+          <p>
+            Master quantitative and qualitative data collection techniques. 
+            Hands-on practice with digital survey tools and interview protocols. 
+            Prepare for community fieldwork.
+          </p>
+          <div class="session-details">
+            <span class="session-date">Tuesday, April 15</span>
+            <span class="session-duration">2 hours</span>
+          </div>
+        </a>
+        
+        <!-- Session 4 -->
+        <a href="Module 1, Session 4.html" class="session-card">
+          <span class="session-status status-upcoming">Upcoming</span>
+          <div class="session-number">4</div>
+          <h3>Survey Refinement & Deployment Planning</h3>
+          <p>
+            Finalize survey instruments, test data collection tools, and develop 
+            deployment strategies. Create team protocols for consistent data gathering 
+            in the field.
+          </p>
+          <div class="session-details">
+            <span class="session-date">Thursday, April 17</span>
+            <span class="session-duration">1 hr 30 mins</span>
+          </div>
+        </a>
+      </div>
+      
+      <!-- Study Guide Card -->
+      <a href="Module 1, Study Guide.html" class="study-guide-card">
+        <h3>📚 Module 1 Study Guide</h3>
+        <p>
+          Comprehensive review materials, key concepts, practice questions, 
+          and additional resources to reinforce your learning throughout Module 1.
+        </p>
+        <div class="study-guide-button">Access Study Guide</div>
+      </a>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+      <p>© 2025 MIT Youth Advocacy Program (YPAR with AI Integration)</p>
+      <p>Questions? Contact: javier@clubstride.org | (707) 204-3160</p>
+    </footer>
+  </div>
+  
+  <!-- JavaScript for Session Tracking -->
+  <script>
+    // Session card click tracking (for analytics)
+    document.querySelectorAll('.session-card').forEach((card, index) => {
+      card.addEventListener('click', function(e) {
+        console.log(`Session ${index + 1} accessed`);
+        // Could add analytics tracking here
+      });
+    });
+  </script>
+</body>
+</html>

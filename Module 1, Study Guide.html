@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 1 Study Guide: Foundations & Frameworks</title>
+    <meta name="description" content="Comprehensive study guide for Module 1 of the Social Impact Program - Master YPAR, Ethics, Root Cause Analysis, and Strategic Planning with current research and best practices" />
+    
+    <style>
+        :root {
+            --guide-primary: #2d3436;
+            --guide-secondary: #0984e3;
+            --guide-accent: #00b894;
+            --guide-warning: #fdcb6e;
+            --guide-danger: #d63031;
+            --guide-light: #f5f5f5;
+            --guide-white: #ffffff;
+            --guide-text: #2d3436;
+            --guide-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--guide-text);
+            background-color: var(--guide-light);
+        }
+        
+        /* Header Styles */
+        .study-header {
+            background: linear-gradient(135deg, var(--guide-primary) 0%, var(--guide-secondary) 100%);
+            color: var(--guide-white);
+            padding: 3rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .study-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(255,255,255,0.05) 10px,
+                rgba(255,255,255,0.05) 20px
+            );
+            animation: slide 20s linear infinite;
+        }
+        
+        @keyframes slide {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+        
+        .study-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .study-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Navigation */
+        .study-nav {
+            background-color: var(--guide-white);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--guide-shadow);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .nav-link {
+            color: var(--guide-primary);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .nav-link:hover {
+            background-color: var(--guide-secondary);
+            color: var(--guide-white);
+        }
+        
+        /* Main Container */
+        .study-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        /* Section Styles */
+        .study-section {
+            background-color: var(--guide-white);
+            margin-bottom: 2rem;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: var(--guide-shadow);
+        }
+        
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid var(--guide-secondary);
+        }
+        
+        .section-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--guide-secondary);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            font-size: 1.5rem;
+            color: var(--guide-white);
+        }
+        
+        .section-title {
+            font-size: 1.8rem;
+            color: var(--guide-primary);
+        }
+        
+        /* Content Boxes */
+        .concept-box {
+            background-color: #e3f2fd;
+            border-left: 4px solid var(--guide-secondary);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 5px;
+        }
+        
+        .concept-box h3 {
+            color: var(--guide-secondary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .fact-box {
+            background-color: #e8f5e9;
+            border-left: 4px solid var(--guide-accent);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 5px;
+        }
+        
+        .fact-box h3 {
+            color: var(--guide-accent);
+            margin-bottom: 0.5rem;
+        }
+        
+        .warning-box {
+            background-color: #fff3e0;
+            border-left: 4px solid var(--guide-warning);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 5px;
+        }
+        
+        .warning-box h3 {
+            color: #f57c00;
+            margin-bottom: 0.5rem;
+        }
+        
+        .example-box {
+            background-color: #fce4ec;
+            border-left: 4px solid #e91e63;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 5px;
+        }
+        
+        .example-box h3 {
+            color: #c2185b;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Lists */
+        .concept-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .concept-list li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .concept-list li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--guide-secondary);
+            font-weight: bold;
+        }
+        
+        /* Tables */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        
+        .comparison-table th {
+            background-color: var(--guide-secondary);
+            color: var(--guide-white);
+            padding: 1rem;
+            text-align: left;
+        }
+        
+        .comparison-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .comparison-table tr:hover {
+            background-color: #f5f5f5;
+        }
+        
+        /* Quick Reference Cards */
+        .reference-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        
+        .reference-card {
+            background-color: var(--guide-light);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 2px solid var(--guide-secondary);
+            transition: transform 0.3s ease;
+        }
+        
+        .reference-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--guide-shadow);
+        }
+        
+        .reference-card h4 {
+            color: var(--guide-secondary);
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Resources Section */
+        .resource-link {
+            color: var(--guide-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-block;
+            margin: 0.5rem 0;
+            transition: color 0.3s ease;
+        }
+        
+        .resource-link:hover {
+            color: var(--guide-accent);
+            text-decoration: underline;
+        }
+        
+        /* Footer */
+        .study-footer {
+            background-color: var(--guide-primary);
+            color: var(--guide-white);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+            border-radius: 10px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .study-container {
+                padding: 1rem;
+            }
+            
+            .study-section {
+                padding: 1.5rem;
+            }
+            
+            .nav-container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="study-header">
+        <h1>Module 1 Study Guide</h1>
+        <p>Foundations & Frameworks for Youth-Led Community Change</p>
+    </header>
+    
+    <nav class="study-nav">
+        <div class="nav-container">
+            <a href="#session1" class="nav-link">Session 1: YPAR & SDOH</a>
+            <a href="#session2" class="nav-link">Session 2: Ethics</a>
+            <a href="#session3" class="nav-link">Session 3: Root Cause</a>
+            <a href="#session4" class="nav-link">Session 4: Strategic Planning</a>
+            <a href="#resources" class="nav-link">Resources</a>
+        </div>
+    </nav>
+    
+    <div class="study-container">
+        <!-- Session 1 Study Section -->
+        <section id="session1" class="study-section">
+            <div class="section-header">
+                <div class="section-icon">1</div>
+                <h2 class="section-title">Session 1: Introduction to Social Impact & YPAR</h2>
+            </div>
+            
+            <div class="concept-box">
+                <h3>Youth Participatory Action Research (YPAR)</h3>
+                <p>YPAR represents one of the most effective approaches for youth community engagement, with recent evidence showing transformative impacts across multiple domains.</p>
+                <ul class="concept-list">
+                    <li>Youth serve as co-researchers with genuine decision-making power</li>
+                    <li>Dual focus on rigorous research methodology and authentic youth leadership</li>
+                    <li>Research leads directly to action and community change</li>
+                    <li>Centers youth voice, expertise, and lived experiences</li>
+                    <li>Challenges traditional adult-youth power dynamics in research</li>
+                </ul>
+            </div>
+            
+            <div class="fact-box">
+                <h3>Key Research: YPAR Effectiveness (2020-2025)</h3>
+                <p>A comprehensive analysis of 3,724 articles yielding 67 peer-reviewed studies found:</p>
+                <ul>
+                    <li><strong>75%</strong> of YPAR programs showed significant improvements in youth agency and leadership</li>
+                    <li><strong>55.8%</strong> demonstrated academic or career advancement benefits</li>
+                    <li>Multiple documented policy changes at municipal levels</li>
+                    <li>Successful virtual adaptation during COVID-19 with enhanced participation</li>
+                    <li>Statistically significant improvements in social well-being, institutional trust, and civic participation</li>
+                </ul>
+                <p><strong>Source:</strong> Systematic Review of YPAR in the United States (2020-2025)</p>
+            </div>
+            
+            <div class="example-box">
+                <h3>YPAR Success Stories</h3>
+                <p><strong>California CalFresh Healthy Living YPAR Projects:</strong></p>
+                <ul>
+                    <li>Improved nutrition access across multiple school districts</li>
+                    <li>Developed youth research capabilities while addressing food insecurity</li>
+                </ul>
+                <p><strong>Gonzales Youth Council Mental Health Study (COVID-19):</strong></p>
+                <ul>
+                    <li>Engaged 234 predominantly Latinx students</li>
+                    <li>Identified community mental health needs during crisis</li>
+                    <li>Demonstrated youth capacity for rigorous research under challenging conditions</li>
+                </ul>
+            </div>
+            
+            <div class="concept-box">
+                <h3>Social Determinants of Health (SDOH) - Current Youth Context</h3>
+                <p>The conditions shaping youth health outcomes have intensified, creating urgent need for youth-led interventions.</p>
+                <table class="comparison-table">
+                    <tr>
+                        <th>SDOH Category</th>
+                        <th>Current Statistics</th>
+                        <th>Youth-Specific Impact</th>
+                    </tr>
+                    <tr>
+                        <td>Economic Stability</td>
+                        <td>13.5% household food insecurity (2023)<br>28% youth in high-cost housing</td>
+                        <td>Affects nutrition, academic performance, stress levels</td>
+                    </tr>
+                    <tr>
+                        <td>Mental Health</td>
+                        <td>40% persistent sadness/hopelessness<br>53% among female students</td>
+                        <td>Impacts learning, relationships, future planning</td>
+                    </tr>
+                    <tr>
+                        <td>Housing Stability</td>
+                        <td>4 million youth experience homelessness annually<br>10% increase in 2024</td>
+                        <td>Disrupts education, employment, social connections</td>
+                    </tr>
+                    <tr>
+                        <td>Digital Access</td>
+                        <td>25% lack broadband/devices<br>35% low-income families without broadband</td>
+                        <td>Creates "homework gap," limits opportunities</td>
+                    </tr>
+                    <tr>
+                        <td>Discrimination</td>
+                        <td>LGBTQ+ youth 3x higher bullying rates<br>20% attempting suicide</td>
+                        <td>Severe mental health impacts, school avoidance</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <div class="fact-box">
+                <h3>COVID-19's Lasting Impact on Youth</h3>
+                <ul>
+                    <li>Educational shutdowns averaged 41 weeks globally (70 weeks in Latin America)</li>
+                    <li>Young workforce entrants face projected 13% earnings reduction over first decade</li>
+                    <li>Mental health showed modest improvements 2021-2023 but crisis persists</li>
+                    <li>Youth-led initiatives demonstrated remarkable resilience</li>
+                </ul>
+                <p><strong>Source:</strong> World Bank & CDC Youth Risk Behavior Survey (2023)</p>
+            </div>
+            
+            <div class="reference-grid">
+                <div class="reference-card">
+                    <h4>Public Health Approach</h4>
+                    <p>Focuses on population-level prevention and health promotion through systematic, data-driven interventions addressing root causes.</p>
+                </div>
+                <div class="reference-card">
+                    <h4>Community Assets</h4>
+                    <p>Youth bring unique assets: lived experience, peer networks, technological fluency, cultural bridging, and innovative perspectives.</p>
+                </div>
+                <div class="reference-card">
+                    <h4>Youth Voice</h4>
+                    <p>Authentic youth participation means decision-making power, not just consultation or tokenism.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Session 2 Study Section -->
+        <section id="session2" class="study-section">
+            <div class="section-header">
+                <div class="section-icon">2</div>
+                <h2 class="section-title">Session 2: Research Ethics & Community Trust</h2>
+            </div>
+            
+            <div class="concept-box">
+                <h3>Core Ethical Principles in Youth Research</h3>
+                <p>Building on the Belmont Report, youth research requires additional protections and considerations:</p>
+                <ul class="concept-list">
+                    <li><strong>Respect for Persons:</strong> Recognizing youth's evolving autonomy while ensuring protection</li>
+                    <li><strong>Beneficence:</strong> Maximizing benefits to youth and communities while minimizing risks</li>
+                    <li><strong>Justice:</strong> Ensuring equitable access to research participation and benefits</li>
+                    <li><strong>Community Ownership:</strong> Research findings belong to the community, not just researchers</li>
+                </ul>
+            </div>
+            
+            <div class="warning-box">
+                <h3>Current Regulatory Framework for Youth Research</h3>
+                <ul>
+                    <li><strong>COPPA:</strong> Protects children under 13 online (parental consent required)</li>
+                    <li><strong>GDPR Article 8:</strong> European youth under 16 need parental consent for data processing</li>
+                    <li><strong>Age-Based Consent:</strong>
+                        <ul>
+                            <li>Under 7: Generally cannot provide assent</li>
+                            <li>7-13: Simplified verbal assent + parental permission</li>
+                            <li>14-17: Standard consent language + parental involvement</li>
+                        </ul>
+                    </li>
+                    <li><strong>IRB Categories:</strong> Different risk levels require different review processes</li>
+                </ul>
+            </div>
+            
+            <div class="fact-box">
+                <h3>Digital Equity Crisis (2024-2025)</h3>
+                <p>Current data reveals persistent digital divides affecting youth research participation:</p>
+                <ul>
+                    <li><strong>96%</strong> of U.S. teens use internet daily BUT...</li>
+                    <li><strong>25%</strong> of school-aged children lack broadband or devices at home</li>
+                    <li><strong>43%</strong> of adults earning under $30,000 lack broadband</li>
+                    <li><strong>25%</strong> of Hispanic adults are smartphone-only internet users</li>
+                    <li><strong>23%</strong> of Black adults rely solely on smartphones for internet</li>
+                </ul>
+                <p><strong>Source:</strong> Pew Research Center & FCC Broadband Reports (2024)</p>
+            </div>
+            
+            <div class="concept-box">
+                <h3>AI Bias in Youth Research & Education</h3>
+                <p>Documented biases affecting youth participants:</p>
+                <table class="comparison-table">
+                    <tr>
+                        <th>Bias Type</th>
+                        <th>Specific Example</th>
+                        <th>Impact on Youth Research</th>
+                    </tr>
+                    <tr>
+                        <td>Language Bias</td>
+                        <td>Stanford: AI flags non-native speakers' essays as AI-generated</td>
+                        <td>False cheating accusations, exclusion from programs</td>
+                    </tr>
+                    <tr>
+                        <td>Healthcare Bias</td>
+                        <td>Diagnostic tools less accurate for darker skin tones</td>
+                        <td>Health research may miss or misdiagnose youth of color</td>
+                    </tr>
+                    <tr>
+                        <td>Gender Stereotypes</td>
+                        <td>AI associates careers with traditional gender roles</td>
+                        <td>Reinforces limiting beliefs about youth potential</td>
+                    </tr>
+                    <tr>
+                        <td>Geographic Bias</td>
+                        <td>50%+ of AI datasets from US/China only</td>
+                        <td>Global youth experiences underrepresented</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <div class="example-box">
+                <h3>Best Practices for Ethical Digital Research</h3>
+                <ul>
+                    <li><strong>Verifiable Parental Consent:</strong> Balance security with accessibility</li>
+                    <li><strong>Data Minimization:</strong> Collect only essential information</li>
+                    <li><strong>Enhanced Privacy:</strong> Recognize youth's evolving capacity while maintaining safeguards</li>
+                    <li><strong>Continuous Updates:</strong> Ethical guidelines must evolve with platforms</li>
+                    <li><strong>Offline Alternatives:</strong> Ensure non-digital participation options</li>
+                </ul>
+            </div>
+        </section>
+        
+        <!-- Session 3 Study Section -->
+        <section id="session3" class="study-section">
+            <div class="section-header">
+                <div class="section-icon">3</div>
+                <h2 class="section-title">Session 3: Systems Thinking & Root Cause Analysis</h2>
+            </div>
+            
+            <div class="concept-box">
+                <h3>Youth Demonstrating Sophisticated Systems Analysis</h3>
+                <p>Recent initiatives prove youth can apply complex analytical frameworks traditionally reserved for professionals:</p>
+                <ul class="concept-list">
+                    <li>Eight major documented initiatives (2020-2025) show youth systems thinking success</li>
+                    <li>Youth-adapted visual tools make complex analysis accessible</li>
+                    <li>Integration of research with direct action</li>
+                    <li>Technology-enhanced approaches enable broader participation</li>
+                </ul>
+            </div>
+            
+            <div class="example-box">
+                <h3>Youth Systems Thinking in Action</h3>
+                <p><strong>LIKE Programme - Amsterdam (2020-2024):</strong></p>
+                <ul>
+                    <li>10-14 year-olds created causal loop diagrams for health behaviors</li>
+                    <li>Identified 121 factors and 31 feedback loops related to childhood obesity</li>
+                    <li>Influenced Amsterdam's Healthy Weight Programme policy decisions</li>
+                </ul>
+                
+                <p><strong>Sunrise Movement - Climate Analysis:</strong></p>
+                <ul>
+                    <li>Identified fossil fuel interests as root causes of climate inaction</li>
+                    <li>Developed power mapping of political systems</li>
+                    <li>Contributed to passage of Inflation Reduction Act ($373 billion in climate investments)</li>
+                </ul>
+                
+                <p><strong>March for Our Lives - Gun Violence Prevention:</strong></p>
+                <ul>
+                    <li>Shifted discourse from "gun control" to "gun violence prevention"</li>
+                    <li>Analyzed 5 interconnected forces: firearm access, systemic racism, interpersonal violence, poverty, mental health</li>
+                    <li>Influenced first federal gun legislation in 30 years</li>
+                </ul>
+            </div>
+            
+            <div class="fact-box">
+                <h3>Youth-Adapted Analytical Tools</h3>
+                <ul>
+                    <li><strong>Simplified Causal Loop Diagrams:</strong> Visual representations of reinforcing/balancing feedback</li>
+                    <li><strong>Accessible Power Mapping:</strong> Identifying decision-makers and influence pathways</li>
+                    <li><strong>Peer-Friendly Problem Trees:</strong> Root cause analysis using familiar metaphors</li>
+                    <li><strong>Digital Collaboration Tools:</strong> Online platforms for collective analysis</li>
+                </ul>
+            </div>
+            
+            <div class="concept-box">
+                <h3>The 5 Whys Technique - Youth Applications</h3>
+                <p>Proven effective when youth apply it to community issues:</p>
+                <div class="example-box">
+                    <h3>Real Example: Youth Food Insecurity</h3>
+                    <ol>
+                        <li><strong>Problem:</strong> Youth report being hungry at school</li>
+                        <li><strong>Why?</strong> They don't eat breakfast</li>
+                        <li><strong>Why?</strong> No time in the morning</li>
+                        <li><strong>Why?</strong> They wake up late</li>
+                        <li><strong>Why?</strong> Stay up late doing homework</li>
+                        <li><strong>Why?</strong> No quiet space at home until late</li>
+                        <li><strong>Root Cause:</strong> Overcrowded housing conditions affecting 28% of youth</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="warning-box">
+                <h3>Common Systems Thinking Pitfalls</h3>
+                <ul>
+                    <li>Stopping at individual blame instead of systemic issues</li>
+                    <li>Accepting "lack of motivation" as a root cause</li>
+                    <li>Missing interconnections between problems</li>
+                    <li>Ignoring power dynamics and structural inequities</li>
+                    <li>Overlooking youth assets while focusing on deficits</li>
+                </ul>
+            </div>
+        </section>
+        
+        <!-- Session 4 Study Section -->
+        <section id="session4" class="study-section">
+            <div class="section-header">
+                <div class="section-icon">4</div>
+                <h2 class="section-title">Session 4: Goal Setting & Strategic Planning</h2>
+            </div>
+            
+            <div class="concept-box">
+                <h3>Contemporary KPI Frameworks for Youth Programs</h3>
+                <p>Evidence-based measurement approaches balancing rigor with feasibility:</p>
+                <table class="comparison-table">
+                    <tr>
+                        <th>KPI Category</th>
+                        <th>Specific Indicators</th>
+                        <th>Collection Methods</th>
+                    </tr>
+                    <tr>
+                        <td>Participation</td>
+                        <td>Attendance (retention), engagement quality, demographic diversity</td>
+                        <td>Digital sign-ins, observation rubrics</td>
+                    </tr>
+                    <tr>
+                        <td>Skill Development</td>
+                        <td>Leadership behaviors, communication skills, critical thinking</td>
+                        <td>Pre/post assessments, peer evaluations</td>
+                    </tr>
+                    <tr>
+                        <td>Academic Impact</td>
+                        <td>Grade improvements, school engagement, post-secondary aspirations</td>
+                        <td>School records, surveys</td>
+                    </tr>
+                    <tr>
+                        <td>Health/Wellbeing</td>
+                        <td>Mental health indicators, risk behavior reduction, help-seeking</td>
+                        <td>Validated scales, follow-up surveys</td>
+                    </tr>
+                    <tr>
+                        <td>Community Impact</td>
+                        <td>Service hours, policy influence, peer education reach</td>
+                        <td>Activity logs, media tracking</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <div class="fact-box">
+                <h3>Search Institute's Developmental Assets Framework</h3>
+                <p>Validated with over 1 million youth across 30+ countries:</p>
+                <ul>
+                    <li><strong>40 Developmental Assets</strong> divided between external supports and internal strengths</li>
+                    <li>Youth with 31+ assets show dramatically reduced risk behaviors</li>
+                    <li>Framework enables cross-program comparison and standardized measurement</li>
+                    <li>Culturally adapted versions available for diverse communities</li>
+                </ul>
+                <p><strong>Impact:</strong> Programs using this framework consistently document improvements in risk reduction and positive youth development</p>
+            </div>
+            
+            <div class="example-box">
+                <h3>Cost-Effective Measurement for Small Organizations</h3>
+                <p><strong>Minimum Viable Measurement System ($2,000-5,000 annually):</strong></p>
+                <ul>
+                    <li>One validated instrument (e.g., resilience scale)</li>
+                    <li>Basic tracking system (Google Forms)</li>
+                    <li>Monthly youth feedback sessions</li>
+                    <li>Bi-weekly staff reflections</li>
+                    <li>Quarterly one-page impact summaries</li>
+                </ul>
+                <p><strong>Free/Low-Cost Tools:</strong></p>
+                <ul>
+                    <li>Google Forms for data collection</li>
+                    <li>Google Data Studio for visualization</li>
+                    <li>KoBo Toolbox for mobile data collection</li>
+                    <li>SMS tools showing 95% time savings vs. phone surveys</li>
+                </ul>
+            </div>
+            
+            <div class="concept-box">
+                <h3>Building Effective Feedback Loops</h3>
+                <p>Best practices emphasizing authentic youth voice:</p>
+                <ul class="concept-list">
+                    <li>Youth advisory councils with genuine decision-making authority</li>
+                    <li>Youth trained as co-evaluators, not just data sources</li>
+                    <li>Multiple feedback channels including anonymous options</li>
+                    <li>30-90 day rapid evaluation cycles for testing changes</li>
+                    <li>Visual dashboards youth can understand and use</li>
+                    <li>Regular "data parties" where youth interpret findings</li>
+                </ul>
+            </div>
+            
+            <div class="warning-box">
+                <h3>Sustainability Strategies from Successful Programs</h3>
+                <ul>
+                    <li><strong>Multi-year funding:</strong> Enables relationship building beyond short-term projects</li>
+                    <li><strong>Youth succession planning:</strong> Older youth train incoming participants</li>
+                    <li><strong>Institutional integration:</strong> Embedding programs in existing structures</li>
+                    <li><strong>Resource diversification:</strong> Multiple funding sources reduce vulnerability</li>
+                    <li><strong>Community ownership:</strong> Stakeholders invested in continuation</li>
+                    <li><strong>Adaptive capacity:</strong> Programs that evolve with changing needs survive</li>
+                </ul>
+            </div>
+        </section>
+        
+        <!-- Resources Section -->
+        <section id="resources" class="study-section">
+            <div class="section-header">
+                <div class="section-icon">📚</div>
+                <h2 class="section-title">Additional Resources & Current Research</h2>
+            </div>
+            
+            <div class="concept-box">
+                <h3>Essential Current Resources</h3>
+                <ul>
+                    <li><a href="https://yparhub.berkeley.edu/" class="resource-link">UC Berkeley YPAR Hub - Methods, tools, and case studies</a></li>
+                    <li><a href="https://www.cdc.gov/healthyyouth/data/yrbs/index.htm" class="resource-link">CDC Youth Risk Behavior Survey - Latest youth health data</a></li>
+                    <li><a href="https://www.urban.org/research/publication/evaluation-guide-public-service-program-managers" class="resource-link">Urban Institute - Program evaluation guides</a></li>
+                    <li><a href="https://www.search-institute.org/our-research/development-assets/developmental-assets-framework/" class="resource-link">Search Institute - Developmental Assets Framework</a></li>
+                    <li><a href="https://www.youthpower.org/" class="resource-link">YouthPower - USAID youth engagement resources</a></li>
+                </ul>
+            </div>
+            
+            <div class="fact-box">
+                <h3>Digital Tools for Youth Research</h3>
+                <ul>
+                    <li><a href="https://www.kobotoolbox.org/" class="resource-link">KoBo Toolbox - Free mobile data collection</a></li>
+                    <li><a href="https://www.mentimeter.com/" class="resource-link">Mentimeter - Interactive youth engagement</a></li>
+                    <li><a href="https://miro.com/" class="resource-link">Miro - Digital whiteboarding for systems mapping</a></li>
+                    <li><a href="https://www.canva.com/" class="resource-link">Canva - Youth-friendly design tools</a></li>
+                </ul>
+            </div>
+            
+            <div class="warning-box">
+                <h3>Key Takeaways for Module Success</h3>
+                <ul>
+                    <li><strong>YPAR Works:</strong> 75% of programs show significant youth leadership gains</li>
+                    <li><strong>Context Matters:</strong> 40% of youth face persistent mental health challenges</li>
+                    <li><strong>Digital Equity is Essential:</strong> 25% of youth lack adequate technology access</li>
+                    <li><strong>Systems Thinking Succeeds:</strong> Youth-led movements achieved major policy wins</li>
+                    <li><strong>Measurement Enables Impact:</strong> Simple tools can track meaningful change</li>
+                    <li><strong>Ethics Build Trust:</strong> Appropriate protections enable authentic participation</li>
+                </ul>
+            </div>
+            
+            <div class="example-box">
+                <h3>Quick Reference: Research Ethics Checklist</h3>
+                <ul>
+                    <li>✓ Age-appropriate consent/assent processes established</li>
+                    <li>✓ Digital and non-digital participation options available</li>
+                    <li>✓ AI bias considerations addressed in all tools</li>
+                    <li>✓ Cultural advisors consulted and compensated</li>
+                    <li>✓ Data protection plan includes youth input</li>
+                    <li>✓ Community ownership of findings agreed upon</li>
+                    <li>✓ Feedback mechanisms accessible to all participants</li>
+                    <li>✓ Youth decision-making power clearly defined</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+    
+    <footer class="study-footer">
+        <p>© 2025 Social Impact Program Study Guide - Updated with Current Research</p>
+        <p>Remember: Youth-led research achieves remarkable outcomes when provided appropriate support, frameworks, and genuine decision-making power.</p>
+    </footer>
+</body>
+</html>

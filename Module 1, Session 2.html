@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session 2: Ethics as Foundation for Trust</title>
+    <meta name="description" content="Research Ethics & Community Trust - Building ethical foundations for youth-led research and advocacy." />
+    
+    <style>
+        :root {
+            --primary-color: #4c6ef5;
+            --secondary-color: #40c057;
+            --accent-color: #fd7e14;
+            --dark-color: #343a40;
+            --light-color: #f8f9fa;
+            --text-color: #212529;
+            --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #f1f3f5;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary-color), #228be6);
+            color: white;
+            padding: 2.5rem;
+            text-align: center;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+        
+        header h2 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+        
+        header p {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+        
+        .date-box {
+            display: inline-block;
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 30px;
+            font-weight: 500;
+            margin-top: 0.5rem;
+        }
+        
+        .intro-section {
+            background-color: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+        
+        .intro-message {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 1.5rem auto;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            margin: 1.5rem auto;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+        }
+        
+        .learning-section {
+            background-color: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+        }
+        
+        .section-title {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+        
+        .learning-objectives {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin: 1rem 0 1.5rem 0;
+        }
+        
+        .objective-card {
+            flex: 1;
+            min-width: 200px;
+            background-color: #f8f9fa;
+            border-left: 4px solid var(--primary-color);
+            padding: 1.2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        
+        .objective-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+        
+        .objective-card p {
+            color: #495057;
+            font-size: 0.95rem;
+        }
+        
+        .session-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .session-card {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .session-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .session-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .session-card h3 .time {
+            font-size: 0.8rem;
+            padding: 0.3rem 0.6rem;
+            border-radius: 20px;
+            background-color: var(--accent-color);
+            color: white;
+            font-weight: normal;
+        }
+        
+        .session-card ul {
+            padding-left: 1.2rem;
+            margin-top: 0.5rem;
+        }
+        
+        .session-card li {
+            margin-bottom: 0.5rem;
+            color: #495057;
+        }
+        
+        .session-card p {
+            margin-bottom: 1rem;
+            color: #495057;
+            font-size: 0.95rem;
+        }
+        
+        .expand-icon {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            background-color: var(--primary-color);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            transition: transform 0.3s ease;
+        }
+        
+        .detailed-content {
+            display: none;
+            background-color: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-top: 1rem;
+            border-top: 3px solid var(--primary-color);
+        }
+        
+        .detailed-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .definition-box {
+            background-color: #e7f5ff;
+            border-left: 4px solid #4dabf7;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .definition-box h4 {
+            color: #1864ab;
+            margin-bottom: 0.5rem;
+        }
+        
+        .definition-box p {
+            color: #495057;
+            font-size: 0.95rem;
+        }
+        
+        .discussion-box {
+            background-color: #fff9db;
+            border-left: 4px solid #fcc419;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .discussion-box h4 {
+            color: #e67700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .discussion-box ul {
+            padding-left: 1.2rem;
+        }
+        
+        .discussion-box li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .activity-box {
+            background-color: #f3f0ff;
+            border-left: 4px solid #7950f2;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .activity-box h4 {
+            color: #6741d9;
+            margin-bottom: 0.5rem;
+        }
+        
+        .activity-box p {
+            margin-bottom: 0.5rem;
+        }
+        
+        .feedback-box {
+            background-color: #ebfbee;
+            border-left: 4px solid #40c057;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .feedback-box h4 {
+            color: #2b8a3e;
+            margin-bottom: 0.5rem;
+        }
+        
+        .feedback-box ul {
+            padding-left: 1.2rem;
+        }
+        
+        .feedback-box li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: var(--dark-color);
+            color: white;
+            border-radius: 15px;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            header {
+                padding: 1.5rem;
+            }
+            
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            .learning-objectives {
+                flex-direction: column;
+            }
+            
+            .session-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Ethics as Foundation for Trust</h1>
+            <h2>Research Ethics & Community Trust in Youth Advocacy</h2>
+            <p>A 90-minute interactive session on ethical research practices and building community trust</p>
+            <div class="date-box">Thursday, Week 1 | Module 1: Foundations & Frameworks</div>
+        </header>
+        
+        <section class="intro-section">
+            <div class="intro-message">
+                <p>Welcome back! Building on our understanding of YPAR and community mapping, today we dive into the ethical foundations that make youth research trustworthy and impactful. You'll learn how to protect participants, handle data responsibly, navigate AI bias, and ensure your research honors cultural diversity. These ethical principles aren't just rules—they're the foundation for building genuine trust with your community and creating research that truly serves people's needs.</p>
+            </div>
+            
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID_HERE" title="Research Ethics & Community Trust" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </section>
+        
+        <section class="learning-section">
+            <h2 class="section-title">What You'll Learn Today</h2>
+            
+            <div class="learning-objectives">
+                <div class="objective-card">
+                    <h3>Informed Consent & Confidentiality</h3>
+                    <p>Master the principles of voluntary participation and protecting participant privacy in youth research.</p>
+                </div>
+                
+                <div class="objective-card">
+                    <h3>Data Governance & Protection</h3>
+                    <p>Learn responsible data handling practices that keep community information safe and secure.</p>
+                </div>
+                
+                <div class="objective-card">
+                    <h3>AI Bias & Digital Equity</h3>
+                    <p>Understand how technology can perpetuate inequity and learn strategies for inclusive digital research.</p>
+                </div>
+                
+                <div class="objective-card">
+                    <h3>Cultural Sensitivity</h3>
+                    <p>Develop skills for conducting research that respects and honors diverse cultural perspectives.</p>
+                </div>
+                
+                <div class="objective-card">
+                    <h3>Ethical Youth Advocacy</h3>
+                    <p>Explore the unique ethical considerations when youth lead research and advocacy efforts.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="learning-section">
+            <h2 class="section-title">Session Activities</h2>
+            <p style="text-align: center; margin-bottom: 20px; color: #495057;">Each activity is ~30 minutes. Click on any to see details (Key Terms, Discussion, Activity, Reflection).</p>
+            
+            <div class="session-grid">
+                <!-- Activity 1: Informed Consent & Data Protection -->
+                <div class="session-card" onclick="toggleSection('consent-data')">
+                    <h3>Informed Consent & Data Protection <span class="time">30 min</span></h3>
+                    <p>Build trust through ethical research practices:</p>
+                    <ul>
+                        <li>Understanding voluntary participation</li>
+                        <li>Protecting participant confidentiality</li>
+                        <li>Responsible data governance</li>
+                    </ul>
+                    <div class="expand-icon">+</div>
+                    
+                    <div id="consent-data" class="detailed-content">
+                        <div class="definition-box">
+                            <h4>Key Terms</h4>
+                            <p><strong>Informed Consent:</strong> Participants' voluntary agreement to join research after understanding its purpose, risks, benefits, and their rights.</p>
+                            <p><strong>Confidentiality:</strong> Keeping participants' personal information private and never sharing identifying details without permission.</p>
+                            <p><strong>Data Governance:</strong> The system of rules and practices for collecting, storing, using, and protecting research data.</p>
+                            <p><strong>Anonymization:</strong> Removing all identifying information so data cannot be traced back to individuals.</p>
+                        </div>
+                        
+                        <div class="discussion-box">
+                            <h4>Discussion Points</h4>
+                            <ul>
+                                <li>Why might someone hesitate to participate in research, especially youth?</li>
+                                <li>How does protecting confidentiality build community trust?</li>
+                                <li>What happens when researchers break promises about data protection?</li>
+                                <li>How do we balance transparency with privacy protection?</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="activity-box">
+                            <h4>Activity: Consent Scenario Analysis</h4>
+                            <p>In groups of 3-4, analyze these scenarios:</p>
+                            <ol>
+                                <li><strong>Scenario A:</strong> You want to interview teens about mental health struggles at school</li>
+                                <li><strong>Scenario B:</strong> You're surveying families about food insecurity in their homes</li>
+                                <li><strong>Scenario C:</strong> You're observing youth behavior at a community center</li>
+                            </ol>
+                            <p>For each scenario, discuss and document:</p>
+                            <ul>
+                                <li>What information must participants know before agreeing?</li>
+                                <li>What data protection concerns exist?</li>
+                                <li>How would you explain the research in youth-friendly language?</li>
+                                <li>What special considerations exist for minors?</li>
+                            </ul>
+                            <p>Create a simple consent checklist based on your analysis.</p>
+                        </div>
+                        
+                        <div class="feedback-box">
+                            <h4>Reflection Questions</h4>
+                            <ul>
+                                <li>What surprised you about the complexity of informed consent?</li>
+                                <li>How might consent processes differ across cultures in your community?</li>
+                                <li>What data protection practices will you commit to in your research?</li>
+                                <li>How can youth researchers build trust while maintaining professional boundaries?</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Activity 2: AI Bias & Digital Equity -->
+                <div class="session-card" onclick="toggleSection('ai-digital-equity')">
+                    <h3>AI Bias & Digital Equity <span class="time">30 min</span></h3>
+                    <p>Navigate technology's impact on fair research:</p>
+                    <ul>
+                        <li>Recognizing AI bias in research tools</li>
+                        <li>Understanding digital divides</li>
+                        <li>Ensuring equitable access and representation</li>
+                    </ul>
+                    <div class="expand-icon">+</div>
+                    
+                    <div id="ai-digital-equity" class="detailed-content">
+                        <div class="definition-box">
+                            <h4>Key Terms</h4>
+                            <p><strong>Algorithmic Bias:</strong> When AI systems produce unfair outcomes due to biased training data or design choices.</p>
+                            <p><strong>Digital Equity:</strong> Ensuring all community members have equal access to technology and digital opportunities.</p>
+                            <p><strong>Digital Redlining:</strong> When certain communities are systematically excluded from digital services or opportunities.</p>
+                            <p><strong>Inclusive Design:</strong> Creating research tools and methods accessible to people with diverse abilities and resources.</p>
+                        </div>
+                        
+                        <div class="discussion-box">
+                            <h4>Discussion Points</h4>
+                            <ul>
+                                <li>How might AI-generated survey questions exclude certain groups?</li>
+                                <li>What happens when research requires internet access that some don't have?</li>
+                                <li>How do language models trained on limited data perpetuate stereotypes?</li>
+                                <li>Why is transparency about AI use important in community research?</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="activity-box">
+                            <h4>Activity: Bias Detective Challenge</h4>
+                            <p>Part 1: AI Bias Detection (15 minutes)</p>
+                            <ol>
+                                <li>Review 5 AI-generated survey questions about youth health</li>
+                                <li>Identify potential biases in language, assumptions, or framing</li>
+                                <li>Rewrite questions to be more inclusive and equitable</li>
+                            </ol>
+                            <p>Part 2: Digital Equity Mapping (15 minutes)</p>
+                            <ul>
+                                <li>Map digital access in your community (internet, devices, skills)</li>
+                                <li>Identify who might be excluded from online research</li>
+                                <li>Brainstorm alternative methods to reach these populations</li>
+                                <li>Create an "equity checklist" for your research design</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="feedback-box">
+                            <h4>Reflection Questions</h4>
+                            <ul>
+                                <li>What AI biases were you previously unaware of?</li>
+                                <li>How can youth researchers advocate for digital equity?</li>
+                                <li>What non-digital research methods ensure no one is left out?</li>
+                                <li>How will you verify AI tools aren't perpetuating harm?</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Activity 3: Cultural Sensitivity & Ethical Advocacy -->
+                <div class="session-card" onclick="toggleSection('cultural-ethics')">
+                    <h3>Cultural Sensitivity & Ethical Advocacy <span class="time">30 min</span></h3>
+                    <p>Honor diversity in research and advocacy:</p>
+                    <ul>
+                        <li>Respecting cultural perspectives</li>
+                        <li>Avoiding extractive research practices</li>
+                        <li>Ethical considerations for youth advocates</li>
+                    </ul>
+                    <div class="expand-icon">+</div>
+                    
+                    <div id="cultural-ethics" class="detailed-content">
+                        <div class="definition-box">
+                            <h4>Key Terms</h4>
+                            <p><strong>Cultural Humility:</strong> Recognizing your own cultural limitations and being open to learning from others.</p>
+                            <p><strong>Extractive Research:</strong> Taking knowledge from communities without giving back or sharing benefits.</p>
+                            <p><strong>Community Ownership:</strong> Ensuring research findings and benefits belong to the community, not just researchers.</p>
+                            <p><strong>Positionality:</strong> Understanding how your identity and experiences shape your research perspective.</p>
+                        </div>
+                        
+                        <div class="discussion-box">
+                            <h4>Discussion Points</h4>
+                            <ul>
+                                <li>How do cultural differences affect what people share in research?</li>
+                                <li>What makes research "extractive" versus "collaborative"?</li>
+                                <li>How can youth researchers navigate generational cultural differences?</li>
+                                <li>What unique ethical challenges do youth advocates face?</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="activity-box">
+                            <h4>Activity: Building Culturally Responsive Research</h4>
+                            <p><strong>Part 1: Positionality Mapping (10 minutes)</strong></p>
+                            <ul>
+                                <li>Write your identities that might influence your research (age, culture, language, etc.)</li>
+                                <li>Reflect on advantages and blind spots these create</li>
+                                <li>Share one insight with a partner</li>
+                            </ul>
+                            <p><strong>Part 2: Community Scenarios (20 minutes)</strong></p>
+                            <p>Your team receives these research requests. For each, discuss ethical approaches:</p>
+                            <ol>
+                                <li>Elderly immigrants ask you to help but only speak their native language</li>
+                                <li>A cultural group has specific gender rules about who can speak to whom</li>
+                                <li>Community members want to see all data before you share it publicly</li>
+                                <li>Your research challenges cultural practices you personally disagree with</li>
+                            </ol>
+                            <p>Create guidelines for culturally sensitive research in your community.</p>
+                        </div>
+                        
+                        <div class="feedback-box">
+                            <h4>Reflection Questions</h4>
+                            <ul>
+                                <li>How does your positionality both help and potentially limit your research?</li>
+                                <li>What cultural assets in your community can strengthen research?</li>
+                                <li>How will you ensure your advocacy amplifies rather than replaces community voices?</li>
+                                <li>What will you do when ethical principles conflict with each other?</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="learning-section">
+            <h2 class="section-title">Session Assignment</h2>
+            <p style="text-align: center; margin-bottom: 20px; color: #495057;">Apply ethical principles to your developing research ideas.</p>
+            
+            <div class="session-grid">
+                <div class="session-card" style="cursor: auto;">
+                    <h3>Ethics in Action Plan <span class="time">Due Next Session</span></h3>
+                    <ul>
+                        <li>Create an ethical framework for your research interest</li>
+                        <li>Develop a youth-friendly consent process</li>
+                        <li>Identify potential ethical challenges and solutions</li>
+                    </ul>
+                    <div class="expand-icon" style="pointer-events: none;">✓</div>
+                    
+                    <div class="detailed-content" style="display: block; margin-top: 1rem;">
+                        <p><strong>Instructions:</strong></p>
+                        <ol style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                            <li><strong>Choose Your Research Topic (from Session 1 reflection):</strong>
+                                <ul style="margin-top: 0.5rem;">
+                                    <li>Briefly describe the community issue you want to research</li>
+                                    <li>Identify who would participate in your research</li>
+                                </ul>
+                            </li>
+                            <li><strong>Create an Ethical Framework:</strong>
+                                <ul style="margin-top: 0.5rem;">
+                                    <li>Write 3 key ethical principles that will guide your research</li>
+                                    <li>Explain how each principle protects participants and builds trust</li>
+                                </ul>
+                            </li>
+                            <li><strong>Design a Youth-Friendly Consent Process:</strong>
+                                <ul style="margin-top: 0.5rem;">
+                                    <li>Draft a 1-paragraph explanation of your research for participants</li>
+                                    <li>List 5 rights participants have (in simple language)</li>
+                                    <li>Create a visual or creative way to explain consent</li>
+                                </ul>
+                            </li>
+                            <li><strong>Anticipate Challenges:</strong>
+                                <ul style="margin-top: 0.5rem;">
+                                    <li>Identify 2 potential ethical dilemmas in your research</li>
+                                    <li>Propose solutions using principles from today's session</li>
+                                    <li>Note any cultural considerations specific to your community</li>
+                                </ul>
+                            </li>
+                        </ol>
+                        <p style="margin-top: 1rem;"><strong>Format:</strong> 2-3 pages including your visual consent element. Be creative!</p>
+                        <p><strong>Purpose:</strong> This assignment helps you proactively address ethical considerations before beginning research, ensuring your work builds rather than breaks community trust.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <footer class="footer">
+            <p>© 2025 Social Impact Program | Module 1: Foundations & Frameworks</p>
+            <p>Questions? Contact: [Program Coordinator Email] | [Phone Number]</p>
+        </footer>
+    </div>
+    
+    <script>
+        function toggleSection(sectionId) {
+            const contentElement = document.getElementById(sectionId);
+            const parentCard = contentElement.parentElement;
+            const expandIcon = parentCard.querySelector('.expand-icon');
+            
+            if (contentElement.classList.contains('active')) {
+                contentElement.classList.remove('active');
+                expandIcon.textContent = '+';
+            } else {
+                contentElement.classList.add('active');
+                expandIcon.textContent = '−';
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session 1: Building Foundations for Change</title>
+    <meta name="description" content="Introduction to Social Impact & Youth Participatory Action Research (YPAR) - A foundational session for youth changemakers." />
+    
+    <style>
+        :root {
+            --primary-color: #4c6ef5;
+            --secondary-color: #40c057;
+            --accent-color: #fd7e14;
+            --dark-color: #343a40;
+            --light-color: #f8f9fa;
+            --text-color: #212529;
+            --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #f1f3f5;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary-color), #228be6);
+            color: white;
+            padding: 2.5rem;
+            text-align: center;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+        
+        header h2 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+        
+        header p {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+        
+        .date-box {
+            display: inline-block;
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 30px;
+            font-weight: 500;
+            margin-top: 0.5rem;
+        }
+        
+        .intro-section {
+            background-color: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+        
+        .intro-message {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 1.5rem auto;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            margin: 1.5rem auto;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+        }
+        
+        .learning-section {
+            background-color: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+        }
+        
+        .section-title {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+        
+        .learning-objectives {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin: 1rem 0 1.5rem 0;
+        }
+        
+        .objective-card {
+            flex: 1;
+            min-width: 200px;
+            background-color: #f8f9fa;
+            border-left: 4px solid var(--primary-color);
+            padding: 1.2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        
+        .objective-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+        
+        .objective-card p {
+            color: #495057;
+            font-size: 0.95rem;
+        }
+        
+        .session-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .session-card {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .session-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .session-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .session-card h3 .time {
+            font-size: 0.8rem;
+            padding: 0.3rem 0.6rem;
+            border-radius: 20px;
+            background-color: var(--accent-color);
+            color: white;
+            font-weight: normal;
+        }
+        
+        .session-card ul {
+            padding-left: 1.2rem;
+            margin-top: 0.5rem;
+        }
+        
+        .session-card li {
+            margin-bottom: 0.5rem;
+            color: #495057;
+        }
+        
+        .session-card p {
+            margin-bottom: 1rem;
+            color: #495057;
+            font-size: 0.95rem;
+        }
+        
+        .expand-icon {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            background-color: var(--primary-color);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            transition: transform 0.3s ease;
+        }
+        
+        .detailed-content {
+            display: none;
+            background-color: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-top: 1rem;
+            border-top: 3px solid var(--primary-color);
+        }
+        
+        .detailed-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .definition-box {
+            background-color: #e7f5ff;
+            border-left: 4px solid #4dabf7;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .definition-box h4 {
+            color: #1864ab;
+            margin-bottom: 0.5rem;
+        }
+        
+        .definition-box p {
+            color: #495057;
+            font-size: 0.95rem;
+        }
+        
+        .discussion-box {
+            background-color: #fff9db;
+            border-left: 4px solid #fcc419;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .discussion-box h4 {
+            color: #e67700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .discussion-box ul {
+            padding-left: 1.2rem;
+        }
+        
+        .discussion-box li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .activity-box {
+            background-color: #f3f0ff;
+            border-left: 4px solid #7950f2;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .activity-box h4 {
+            color: #6741d9;
+            margin-bottom: 0.5rem;
+        }
+        
+        .activity-box p {
+            margin-bottom: 0.5rem;
+        }
+        
+        .feedback-box {
+            background-color: #ebfbee;
+            border-left: 4px solid #40c057;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .feedback-box h4 {
+            color: #2b8a3e;
+            margin-bottom: 0.5rem;
+        }
+        
+        .feedback-box ul {
+            padding-left: 1.2rem;
+        }
+        
+        .feedback-box li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: var(--dark-color);
+            color: white;
+            border-radius: 15px;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            header {
+                padding: 1.5rem;
+            }
+            
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            .learning-objectives {
+                flex-direction: column;
+            }
+            
+            .session-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Building Foundations for Change</h1>
+            <h2>Introduction to Social Impact & Youth Participatory Action Research</h2>
+            <p>A 90-minute interactive session to launch your journey as a youth changemaker</p>
+            <div class="date-box">Tuesday, Week 1 | Module 1: Foundations & Frameworks</div>
+        </header>
+        
+        <section class="intro-section">
+            <div class="intro-message">
+                <p>Welcome to the Social Impact Program! Today marks the beginning of your journey as a youth changemaker. In this foundational session, we'll explore how young people like you can identify community needs, understand public health challenges, and use research as a powerful tool for creating positive change. You'll learn about Youth Participatory Action Research (YPAR) and begin mapping the issues that matter most to your community.</p>
+            </div>
+            
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID_HERE" title="Introduction to Social Impact & YPAR" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </section>
+        
+        <section class="learning-section">
+            <h2 class="section-title">What You'll Learn Today</h2>
+            
+            <div class="learning-objectives">
+                <div class="objective-card">
+                    <h3>Program Foundations</h3>
+                    <p>Understand the Social Impact Program structure, expectations, and the transformative journey ahead.</p>
+                </div>
+                
+                <div class="objective-card">
+                    <h3>Public Health & SDOH</h3>
+                    <p>Explore Social Determinants of Health and how they shape community wellbeing.</p>
+                </div>
+                
+                <div class="objective-card">
+                    <h3>YPAR Principles</h3>
+                    <p>Learn how Youth Participatory Action Research empowers young people as co-researchers and changemakers.</p>
+                </div>
+                
+                <div class="objective-card">
+                    <h3>Community Mapping</h3>
+                    <p>Begin identifying and visualizing the interconnected challenges in your community.</p>
+                </div>
+                
+                <div class="objective-card">
+                    <h3>Baseline Assessment</h3>
+                    <p>Complete your first assessment to track your growth throughout the program.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="learning-section">
+            <h2 class="section-title">Session Activities</h2>
+            <p style="text-align: center; margin-bottom: 20px; color: #495057;">Each activity is ~30 minutes. Click on any to see details (Key Terms, Discussion, Activity, Reflection).</p>
+            
+            <div class="session-grid">
+                <!-- Activity 1: Understanding Social Impact & YPAR -->
+                <div class="session-card" onclick="toggleSection('social-impact-ypar')">
+                    <h3>Understanding Social Impact & YPAR <span class="time">30 min</span></h3>
+                    <p>Discover how youth can drive meaningful change through participatory research:</p>
+                    <ul>
+                        <li>What makes youth perspectives unique and valuable</li>
+                        <li>Introduction to Youth Participatory Action Research</li>
+                        <li>Examples of youth-led community transformation</li>
+                    </ul>
+                    <div class="expand-icon">+</div>
+                    
+                    <div id="social-impact-ypar" class="detailed-content">
+                        <div class="definition-box">
+                            <h4>Key Terms</h4>
+                            <p><strong>Social Impact:</strong> Creating positive, meaningful change in communities through intentional action.</p>
+                            <p><strong>Youth Participatory Action Research (YPAR):</strong> A research approach where young people investigate issues affecting their lives and take action based on findings.</p>
+                            <p><strong>Co-researcher:</strong> Youth working as equal partners with adults in the research process.</p>
+                            <p><strong>Community Assets:</strong> Existing strengths and resources within a community that can be leveraged for positive change.</p>
+                        </div>
+                        
+                        <div class="discussion-box">
+                            <h4>Discussion Points</h4>
+                            <ul>
+                                <li>Why are youth uniquely positioned to identify and address community challenges?</li>
+                                <li>How does YPAR differ from traditional research where youth are just subjects?</li>
+                                <li>What community changes have you witnessed that were led by young people?</li>
+                                <li>How can research become a tool for advocacy and action?</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="activity-box">
+                            <h4>Activity: Youth Power Mapping</h4>
+                            <p>In small groups of 3-4:</p>
+                            <ol>
+                                <li>Share one example of when you or other youth made a positive change (big or small)</li>
+                                <li>Identify what made that change possible (skills, resources, support)</li>
+                                <li>Create a visual "power map" showing youth assets in your community</li>
+                                <li>Present your map to the larger group, highlighting untapped potential</li>
+                            </ol>
+                            <p>Time: 15 minutes for mapping, 15 minutes for sharing</p>
+                        </div>
+                        
+                        <div class="feedback-box">
+                            <h4>Reflection Questions</h4>
+                            <ul>
+                                <li>What youth assets surprised you during the mapping exercise?</li>
+                                <li>How might YPAR help amplify youth voice in your community?</li>
+                                <li>What excites you most about becoming a co-researcher?</li>
+                                <li>What concerns or questions do you have about the research process?</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Activity 2: Public Health & Social Determinants -->
+                <div class="session-card" onclick="toggleSection('public-health-sdoh')">
+                    <h3>Public Health & Social Determinants <span class="time">30 min</span></h3>
+                    <p>Explore the factors that shape community health beyond healthcare:</p>
+                    <ul>
+                        <li>Understanding Social Determinants of Health (SDOH)</li>
+                        <li>Connecting individual health to community conditions</li>
+                        <li>Identifying local SDOH in action</li>
+                    </ul>
+                    <div class="expand-icon">+</div>
+                    
+                    <div id="public-health-sdoh" class="detailed-content">
+                        <div class="definition-box">
+                            <h4>Key Terms</h4>
+                            <p><strong>Public Health:</strong> The science of protecting and improving the health of communities through education, policy, and research.</p>
+                            <p><strong>Social Determinants of Health (SDOH):</strong> The conditions where people are born, grow, work, live, and age that affect health outcomes.</p>
+                            <p><strong>Health Equity:</strong> When everyone has a fair opportunity to attain their full health potential.</p>
+                            <p><strong>Upstream Factors:</strong> Root causes that create health problems before they manifest as illness.</p>
+                        </div>
+                        
+                        <div class="discussion-box">
+                            <h4>Discussion Points</h4>
+                            <ul>
+                                <li>How do factors like housing, education, and transportation affect health?</li>
+                                <li>Why might two neighborhoods in the same city have different health outcomes?</li>
+                                <li>What SDOH do you see impacting youth in your community?</li>
+                                <li>How can addressing SDOH create more lasting change than treating symptoms?</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="activity-box">
+                            <h4>Activity: SDOH Detective</h4>
+                            <p>Using a provided community scenario:</p>
+                            <ol>
+                                <li>Read about "Maria," a local high school student facing multiple challenges</li>
+                                <li>Work in pairs to identify all the SDOH affecting her situation</li>
+                                <li>Create a web diagram showing how these factors connect and reinforce each other</li>
+                                <li>Propose 2-3 "upstream" interventions that could improve multiple outcomes</li>
+                            </ol>
+                            <p>Example SDOH to consider: Food access, transportation, safe housing, education quality, family income, neighborhood safety</p>
+                        </div>
+                        
+                        <div class="feedback-box">
+                            <h4>Reflection Questions</h4>
+                            <ul>
+                                <li>Which SDOH connections surprised you the most?</li>
+                                <li>How does understanding SDOH change your view of health problems?</li>
+                                <li>What SDOH most affects youth in your own community?</li>
+                                <li>How might youth-led research address these root causes?</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Activity 3: Community Mapping & Team Building -->
+                <div class="session-card" onclick="toggleSection('community-mapping')">
+                    <h3>Community Mapping & Team Building <span class="time">30 min</span></h3>
+                    <p>Collaborate to identify and visualize community needs:</p>
+                    <ul>
+                        <li>Collective brainstorming of local challenges</li>
+                        <li>Creating visual community maps</li>
+                        <li>Building team connections and trust</li>
+                    </ul>
+                    <div class="expand-icon">+</div>
+                    
+                    <div id="community-mapping" class="detailed-content">
+                        <div class="definition-box">
+                            <h4>Key Terms</h4>
+                            <p><strong>Community Mapping:</strong> A participatory process of identifying and visualizing community assets, challenges, and relationships.</p>
+                            <p><strong>Stakeholder:</strong> Any person or group with interest in or influence over community issues.</p>
+                            <p><strong>Systems Thinking:</strong> Understanding how different parts of a community interact and influence each other.</p>
+                            <p><strong>Collective Intelligence:</strong> The enhanced problem-solving that emerges from group collaboration.</p>
+                        </div>
+                        
+                        <div class="discussion-box">
+                            <h4>Discussion Points</h4>
+                            <ul>
+                                <li>What makes a community challenge worth researching?</li>
+                                <li>How do different perspectives enhance our understanding of issues?</li>
+                                <li>Why is trust important in youth research teams?</li>
+                                <li>How can mapping help us see connections we might miss individually?</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="activity-box">
+                            <h4>Activity: Collaborative Community Challenge Map</h4>
+                            <p>As a full group with large paper or digital whiteboard:</p>
+                            <ol>
+                                <li><strong>Silent Brainstorm (5 min):</strong> Everyone writes challenges they see on sticky notes</li>
+                                <li><strong>Clustering (10 min):</strong> Group similar challenges together into themes</li>
+                                <li><strong>Connection Drawing (10 min):</strong> Draw lines between related issues</li>
+                                <li><strong>Priority Voting (5 min):</strong> Each person gets 3 dots to vote on most pressing issues</li>
+                            </ol>
+                            <p>Team Building Element: Share your name and one strength you bring to addressing these challenges</p>
+                        </div>
+                        
+                        <div class="feedback-box">
+                            <h4>Reflection Questions</h4>
+                            <ul>
+                                <li>What patterns emerged from our collective mapping?</li>
+                                <li>Which connections between issues surprised you?</li>
+                                <li>How did hearing others' perspectives change your understanding?</li>
+                                <li>What challenge area interests you most for potential research?</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="learning-section">
+            <h2 class="section-title">Session Assignment</h2>
+            <p style="text-align: center; margin-bottom: 20px; color: #495057;">Complete this reflective assignment to deepen your understanding and prepare for Session 2.</p>
+            
+            <div class="session-grid">
+                <div class="session-card" style="cursor: auto;">
+                    <h3>Community Observation Journal <span class="time">Due Next Session</span></h3>
+                    <ul>
+                        <li>Observe your community through a "researcher's lens"</li>
+                        <li>Document examples of SDOH in action</li>
+                        <li>Reflect on potential research questions</li>
+                    </ul>
+                    <div class="expand-icon" style="pointer-events: none;">✓</div>
+                    
+                    <div class="detailed-content" style="display: block; margin-top: 1rem;">
+                        <p><strong>Instructions:</strong></p>
+                        <ol style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                            <li><strong>Observation Walk (20 minutes):</strong> Take a walk through your neighborhood or community space. Notice things with fresh eyes - what do you see that affects health and wellbeing?</li>
+                            <li><strong>Document 3 SDOH Examples:</strong> Write about three specific examples of Social Determinants of Health you observe (e.g., bus stop conditions, food store options, youth gathering spaces)</li>
+                            <li><strong>Reflection Questions (1-2 paragraphs):</strong>
+                                <ul style="margin-top: 0.5rem;">
+                                    <li>What surprised you during your observation?</li>
+                                    <li>How might these conditions affect youth specifically?</li>
+                                    <li>What questions emerged that could guide future research?</li>
+                                </ul>
+                            </li>
+                            <li><strong>Initial Research Question:</strong> Based on your observations, write one potential research question you'd like to explore using YPAR methods</li>
+                        </ol>
+                        <p style="margin-top: 1rem;"><strong>Format:</strong> 1-2 pages typed or neatly handwritten. Include the date, time, and location of your observation walk.</p>
+                        <p><strong>Purpose:</strong> This assignment helps you practice observation skills and connect classroom concepts to real community conditions.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <footer class="footer">
+            <p>© 2025 Social Impact Program | Module 1: Foundations & Frameworks</p>
+            <p>Questions? Contact: [Program Coordinator Email] | [Phone Number]</p>
+        </footer>
+    </div>
+    
+    <script>
+        function toggleSection(sectionId) {
+            const contentElement = document.getElementById(sectionId);
+            const parentCard = contentElement.parentElement;
+            const expandIcon = parentCard.querySelector('.expand-icon');
+            
+            if (contentElement.classList.contains('active')) {
+                contentElement.classList.remove('active');
+                expandIcon.textContent = '+';
+            } else {
+                contentElement.classList.add('active');
+                expandIcon.textContent = '−';
+            }
+        }
+    </script>
+</body>
+</html>

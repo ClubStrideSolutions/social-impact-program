@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session 4: Measuring What Matters</title>
+    <meta name="description" content="Goal Setting & Strategic Planning - Developing KPIs, feedback loops, and integrated frameworks for sustainable community impact." />
+    
+    <style>
+        :root {
+            --primary-color: #4c6ef5;
+            --secondary-color: #40c057;
+            --accent-color: #fd7e14;
+            --dark-color: #343a40;
+            --light-color: #f8f9fa;
+            --text-color: #212529;
+            --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #f1f3f5;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary-color), #228be6);
+            color: white;
+            padding: 2.5rem;
+            text-align: center;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+        
+        header h2 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+        
+        header p {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+        
+        .date-box {
+            display: inline-block;
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 30px;
+            font-weight: 500;
+            margin-top: 0.5rem;
+        }
+        
+        .intro-section {
+            background-color: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+        
+        .intro-message {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 1.5rem auto;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            margin: 1.5rem auto;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+        }
+        
+        .learning-section {
+            background-color: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+        }
+        
+        .section-title {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+        
+        .learning-objectives {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin: 1rem 0 1.5rem 0;
+        }
+        
+        .objective-card {
+            flex: 1;
+            min-width: 200px;
+            background-color: #f8f9fa;
+            border-left: 4px solid var(--primary-color);
+            padding: 1.2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        
+        .objective-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+        
+        .objective-card p {
+            color: #495057;
+            font-size: 0.95rem;
+        }
+        
+        .session-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .session-card {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .session-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .session-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .session-card h3 .time {
+            font-size: 0.8rem;
+            padding: 0.3rem 0.6rem;
+            border-radius: 20px;
+            background-color: var(--accent-color);
+            color: white;
+            font-weight: normal;
+        }
+        
+        .session-card ul {
+            padding-left: 1.2rem;
+            margin-top: 0.5rem;
+        }
+        
+        .session-card li {
+            margin-bottom: 0.5rem;
+            color: #495057;
+        }
+        
+        .session-card p {
+            margin-bottom: 1rem;
+            color: #495057;
+            font-size: 0.95rem;
+        }
+        
+        .expand-icon {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            background-color: var(--primary-color);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            transition: transform 0.3s ease;
+        }
+        
+        .detailed-content {
+            display: none;
+            background-color: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-top: 1rem;
+            border-top: 3px solid var(--primary-color);
+        }
+        
+        .detailed-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .definition-box {
+            background-color: #e7f5ff;
+            border-left: 4px solid #4dabf7;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .definition-box h4 {
+            color: #1864ab;
+            margin-bottom: 0.5rem;
+        }
+        
+        .definition-box p {
+            color: #495057;
+            font-size: 0.95rem;
+        }
+        
+        .discussion-box {
+            background-color: #fff9db;
+            border-left: 4px solid #fcc419;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .discussion-box h4 {
+            color: #e67700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .discussion-box ul {
+            padding-left: 1.2rem;
+        }
+        
+        .discussion-box li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .activity-box {
+            background-color: #f3f0ff;
+            border-left: 4px solid #7950f2;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .activity-box h4 {
+            color: #6741d9;
+            margin-bottom: 0.5rem;
+        }
+        
+        .activity-box p {
+            margin-bottom: 0.5rem;
+        }
+        
+        .feedback-box {
+            background-color: #ebfbee;
+            border-left: 4px solid #40c057;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .feedback-box h4 {
+            color: #2b8a3e;
+            margin-bottom: 0.5rem;
+        }
+        
+        .feedback-box ul {
+            padding-left: 1.2rem;
+        }
+        
+        .feedback-box li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .download-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+        
+        .download-button:hover {
+            background-color: #364fc7;
+            box-shadow: 0 4px 8px rgba(76, 110, 245, 0.3);
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: var(--dark-color);
+            color: white;
+            border-radius: 15px;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            header {
+                padding: 1.5rem;
+            }
+            
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            .learning-objectives {
+                flex-direction: column;
+            }
+            
+            .session-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Measuring What Matters</h1>
+            <h2>Goal Setting & Strategic Planning for Sustainable Impact</h2>
+            <p>A 90-minute interactive session on tracking progress and creating systems for continuous improvement</p>
+            <div class="date-box">Thursday, Week 2 | Module 1: Foundations & Frameworks</div>
+        </header>
+        
+        <section class="intro-section">
+            <div class="intro-message">
+                <p>Welcome to our final session of Module 1! You've learned to identify community needs, analyze root causes, and set SMART goals. Today, we'll complete your toolkit by mastering how to measure progress, create feedback loops for continuous improvement, and integrate all four frameworks into a powerful system for change. These skills will transform good intentions into measurable impact, ensuring your youth-led initiatives create lasting change in your community. By session's end, you'll have a complete framework for planning, implementing, and improving community interventions.</p>
+            </div>
+            
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID_HERE" title="Goal Setting & Strategic Planning" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            
+            <div style="text-align: center;">
+                <a href="#" class="download-button" onclick="downloadPage()">Download This Session Guide</a>
+            </div>
+        </section>
+        
+        <section class="learning-section">
+            <h2 class="section-title">What You'll Learn Today</h2>
+            
+            <div class="learning-objectives">
+                <div class="objective-card">
+                    <h3>Strategic Planning</h3>
+                    <p>Move beyond individual goals to create comprehensive strategies for community change.</p>
+                </div>
+                
+                <div class="objective-card">
+                    <h3>KPI Development</h3>
+                    <p>Design meaningful indicators that track both process and outcomes in public health initiatives.</p>
+                </div>
+                
+                <div class="objective-card">
+                    <h3>Feedback Loops</h3>
+                    <p>Build systems that learn and improve continuously based on community input and data.</p>
+                </div>
+                
+                <div class="objective-card">
+                    <h3>Framework Integration</h3>
+                    <p>Connect YPAR, ethics, root cause analysis, and measurement into one powerful approach.</p>
+                </div>
+                
+                <div class="objective-card">
+                    <h3>Sustainability Planning</h3>
+                    <p>Ensure your initiatives continue making impact long after initial implementation.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="learning-section">
+            <h2 class="section-title">Session Activities</h2>
+            <p style="text-align: center; margin-bottom: 20px; color: #495057;">Each activity is ~30 minutes. Click on any to see details (Key Terms, Discussion, Activity, Reflection).</p>
+            
+            <div class="session-grid">
+                <!-- Activity 1: KPI Development for Public Health -->
+                <div class="session-card" onclick="toggleSection('kpi-development')">
+                    <h3>KPI Development for Public Health <span class="time">30 min</span></h3>
+                    <p>Create meaningful metrics for youth health initiatives:</p>
+                    <ul>
+                        <li>Understanding different types of indicators</li>
+                        <li>Balancing process and outcome measures</li>
+                        <li>Building youth-friendly dashboards</li>
+                    </ul>
+                    <div class="expand-icon">+</div>
+                    
+                    <div id="kpi-development" class="detailed-content">
+                        <div class="definition-box">
+                            <h4>Key Terms</h4>
+                            <p><strong>Key Performance Indicator (KPI):</strong> A quantifiable measure used to evaluate the success of an initiative in meeting objectives.</p>
+                            <p><strong>Process Measure:</strong> Indicators that track activities or steps taken (e.g., number of workshops conducted).</p>
+                            <p><strong>Outcome Measure:</strong> Indicators that measure the results or impact (e.g., improvement in health behaviors).</p>
+                            <p><strong>Leading Indicator:</strong> Metrics that predict future performance or outcomes.</p>
+                            <p><strong>Lagging Indicator:</strong> Metrics that show what has already been accomplished.</p>
+                            <p><strong>Dashboard:</strong> A visual display of KPIs that provides at-a-glance monitoring of progress.</p>
+                        </div>
+                        
+                        <div class="discussion-box">
+                            <h4>Discussion Points</h4>
+                            <ul>
+                                <li>What makes a KPI meaningful versus just easy to measure?</li>
+                                <li>How do we balance quantitative data with qualitative stories?</li>
+                                <li>Why might process measures be as important as outcome measures?</li>
+                                <li>How can KPIs help secure continued funding and support?</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="activity-box">
+                            <h4>Activity: Building Your KPI Framework</h4>
+                            <p><strong>Part 1 - KPI Categories (10 mins):</strong> Review examples from youth health programs:</p>
+                            <ul>
+                                <li><strong>Reach:</strong> How many youth are we connecting with?</li>
+                                <li><strong>Engagement:</strong> How actively are they participating?</li>
+                                <li><strong>Knowledge:</strong> What are they learning?</li>
+                                <li><strong>Behavior:</strong> What actions are they taking?</li>
+                                <li><strong>Impact:</strong> What community changes result?</li>
+                            </ul>
+                            
+                            <p><strong>Part 2 - Design Your KPIs (15 mins):</strong> Using your SMART goal from Session 3:</p>
+                            <ol>
+                                <li>Create 2 process KPIs (what you'll do)</li>
+                                <li>Create 2 outcome KPIs (what will change)</li>
+                                <li>For each KPI, specify:
+                                    <ul>
+                                        <li>What exactly will be measured</li>
+                                        <li>How data will be collected</li>
+                                        <li>How often it will be measured</li>
+                                        <li>What success looks like</li>
+                                    </ul>
+                                </li>
+                            </ol>
+                            
+                            <p><strong>Part 3 - Dashboard Sketch (5 mins):</strong> Draw a simple dashboard showing how you'd display these KPIs visually for easy tracking.</p>
+                        </div>
+                        
+                        <div class="feedback-box">
+                            <h4>Reflection Questions</h4>
+                            <ul>
+                                <li>Which KPIs will be most meaningful to youth participants?</li>
+                                <li>How might your KPIs need to adapt over time?</li>
+                                <li>What challenges do you anticipate in data collection?</li>
+                                <li>How will you ensure KPIs don't become more important than actual impact?</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Activity 2: Feedback Loops for Continuous Improvement -->
+                <div class="session-card" onclick="toggleSection('feedback-loops')">
+                    <h3>Feedback Loops for Continuous Improvement <span class="time">30 min</span></h3>
+                    <p>Design systems that learn and adapt:</p>
+                    <ul>
+                        <li>Understanding reinforcing and balancing loops</li>
+                        <li>Creating community feedback mechanisms</li>
+                        <li>Building adaptive programs</li>
+                    </ul>
+                    <div class="expand-icon">+</div>
+                    
+                    <div id="feedback-loops" class="detailed-content">
+                        <div class="definition-box">
+                            <h4>Key Terms</h4>
+                            <p><strong>Feedback Loop:</strong> A system where outputs are routed back as inputs, creating continuous improvement.</p>
+                            <p><strong>Reinforcing Loop:</strong> A cycle that amplifies or accelerates change (positive or negative).</p>
+                            <p><strong>Balancing Loop:</strong> A cycle that seeks equilibrium and prevents runaway change.</p>
+                            <p><strong>Adaptive Management:</strong> Adjusting strategies based on ongoing learning and feedback.</p>
+                            <p><strong>Iteration:</strong> Repeated cycles of implementation, feedback, and improvement.</p>
+                        </div>
+                        
+                        <div class="discussion-box">
+                            <h4>Discussion Points</h4>
+                            <ul>
+                                <li>How do existing problems often create reinforcing loops that make them worse?</li>
+                                <li>What role can youth play in breaking negative cycles?</li>
+                                <li>How quickly should programs adapt based on feedback?</li>
+                                <li>What happens when we ignore community feedback?</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="activity-box">
+                            <h4>Activity: Mapping Feedback Systems</h4>
+                            <p><strong>Part 1 - Identify Current Loops (10 mins):</strong> In pairs, map a reinforcing loop in youth health:</p>
+                            <p>Example: Low energy → Poor school performance → Stress → Poor sleep → Low energy</p>
+                            <ul>
+                                <li>Draw your loop with arrows showing connections</li>
+                                <li>Identify where youth interventions could break the cycle</li>
+                            </ul>
+                            
+                            <p><strong>Part 2 - Design Feedback System (15 mins):</strong> For your initiative, create:</p>
+                            <ol>
+                                <li><strong>Input Methods:</strong> How will you gather feedback?
+                                    <ul>
+                                        <li>Youth surveys</li>
+                                        <li>Community forums</li>
+                                        <li>Digital feedback</li>
+                                        <li>Observation data</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Analysis Process:</strong> Who reviews feedback and how often?</li>
+                                <li><strong>Response Timeline:</strong> How quickly will you make changes?</li>
+                                <li><strong>Communication Loop:</strong> How will you show the community their feedback created change?</li>
+                            </ol>
+                            
+                            <p><strong>Part 3 - Share Solutions (5 mins):</strong> Present one innovative feedback mechanism to the group.</p>
+                        </div>
+                        
+                        <div class="feedback-box">
+                            <h4>Reflection Questions</h4>
+                            <ul>
+                                <li>How can feedback loops empower youth rather than just evaluate them?</li>
+                                <li>What might prevent honest feedback in your community?</li>
+                                <li>How do you balance stability with responsiveness to feedback?</li>
+                                <li>What feedback are you most eager (or afraid) to receive?</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Activity 3: Framework Integration & Action Planning -->
+                <div class="session-card" onclick="toggleSection('framework-integration')">
+                    <h3>Framework Integration & Action Planning <span class="time">30 min</span></h3>
+                    <p>Synthesize all learning into a comprehensive approach:</p>
+                    <ul>
+                        <li>Connecting YPAR, ethics, analysis, and measurement</li>
+                        <li>Creating your integrated action plan</li>
+                        <li>Preparing for Module 2</li>
+                    </ul>
+                    <div class="expand-icon">+</div>
+                    
+                    <div id="framework-integration" class="detailed-content">
+                        <div class="definition-box">
+                            <h4>Key Terms</h4>
+                            <p><strong>Framework Integration:</strong> Combining multiple approaches into a cohesive strategy.</p>
+                            <p><strong>Systems Approach:</strong> Viewing initiatives as part of larger interconnected systems.</p>
+                            <p><strong>Strategic Alignment:</strong> Ensuring all activities support overarching goals.</p>
+                            <p><strong>Sustainability Plan:</strong> Strategies for maintaining impact beyond initial implementation.</p>
+                        </div>
+                        
+                        <div class="discussion-box">
+                            <h4>Discussion Points</h4>
+                            <ul>
+                                <li>How do all four frameworks (YPAR, Ethics, 5 Whys/SMART, KPIs/Feedback) strengthen each other?</li>
+                                <li>What happens when we skip one of these elements?</li>
+                                <li>How can youth researchers maintain this comprehensive approach under pressure?</li>
+                                <li>What support systems help sustain integrated approaches?</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="activity-box">
+                            <h4>Activity: Your Integrated Action Plan</h4>
+                            <p><strong>Individual/Small Group Work (20 mins):</strong> Create a one-page visual plan that includes:</p>
+                            
+                            <div style="border: 2px solid var(--primary-color); padding: 1rem; margin: 1rem 0; border-radius: 8px;">
+                                <p><strong>1. YPAR Foundation (Session 1):</strong></p>
+                                <ul>
+                                    <li>Community issue you're addressing</li>
+                                    <li>Youth role as co-researchers</li>
+                                </ul>
+                                
+                                <p><strong>2. Ethical Framework (Session 2):</strong></p>
+                                <ul>
+                                    <li>How you'll protect participants</li>
+                                    <li>Cultural considerations</li>
+                                </ul>
+                                
+                                <p><strong>3. Root Cause & Goals (Session 3):</strong></p>
+                                <ul>
+                                    <li>Core root cause identified</li>
+                                    <li>One SMART goal</li>
+                                </ul>
+                                
+                                <p><strong>4. Measurement & Adaptation (Session 4):</strong></p>
+                                <ul>
+                                    <li>2-3 key KPIs</li>
+                                    <li>Feedback loop design</li>
+                                </ul>
+                                
+                                <p><strong>5. Next Steps:</strong></p>
+                                <ul>
+                                    <li>First 3 actions to take</li>
+                                    <li>Resources needed</li>
+                                    <li>Timeline for Module 2</li>
+                                </ul>
+                            </div>
+                            
+                            <p><strong>Gallery Walk & Feedback (10 mins):</strong> Post plans and provide peer feedback using "I like... I wonder... I suggest..." format.</p>
+                        </div>
+                        
+                        <div class="feedback-box">
+                            <h4>Reflection Questions</h4>
+                            <ul>
+                                <li>How has your understanding of community change evolved over these four sessions?</li>
+                                <li>Which framework feels most natural? Most challenging?</li>
+                                <li>What excites you most about moving into Module 2?</li>
+                                <li>How will you maintain this integrated approach when facing real-world pressures?</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="learning-section">
+            <h2 class="section-title">Module 1 Culminating Assignment</h2>
+            <p style="text-align: center; margin-bottom: 20px; color: #495057;">Demonstrate your readiness for Module 2 by creating a comprehensive research proposal.</p>
+            
+            <div class="session-grid">
+                <div class="session-card" style="cursor: auto;">
+                    <h3>Comprehensive Framework Application <span class="time">Due Before Module 2</span></h3>
+                    <ul>
+                        <li>Synthesize all four sessions' learning</li>
+                        <li>Create a preliminary research proposal</li>
+                        <li>Prepare to pitch your idea</li>
+                    </ul>
+                    <div class="expand-icon" style="pointer-events: none;">✓</div>
+                    
+                    <div class="detailed-content" style="display: block; margin-top: 1rem;">
+                        <p><strong>Instructions: Create a 3-5 page research proposal that includes:</strong></p>
+                        <ol style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                            <li><strong>Executive Summary (1/2 page):</strong>
+                                <ul style="margin-top: 0.5rem;">
+                                    <li>Brief overview of your community issue and proposed solution</li>
+                                    <li>Why youth leadership is essential for this issue</li>
+                                </ul>
+                            </li>
+                            <li><strong>Background & Root Cause Analysis (1 page):</strong>
+                                <ul style="margin-top: 0.5rem;">
+                                    <li>Community context and SDOH factors</li>
+                                    <li>Complete 5 Whys analysis</li>
+                                    <li>Evidence supporting your root cause identification</li>
+                                </ul>
+                            </li>
+                            <li><strong>Research Plan & Ethics (1 page):</strong>
+                                <ul style="margin-top: 0.5rem;">
+                                    <li>YPAR methodology you'll use</li>
+                                    <li>Ethical considerations and consent process</li>
+                                    <li>How you'll ensure cultural sensitivity</li>
+                                    <li>Data protection plans</li>
+                                </ul>
+                            </li>
+                            <li><strong>Goals & Implementation (1 page):</strong>
+                                <ul style="margin-top: 0.5rem;">
+                                    <li>2-3 SMART goals with clear connections to root causes</li>
+                                    <li>Timeline for implementation</li>
+                                    <li>Resources needed</li>
+                                    <li>Potential partners</li>
+                                </ul>
+                            </li>
+                            <li><strong>Measurement & Sustainability (1 page):</strong>
+                                <ul style="margin-top: 0.5rem;">
+                                    <li>KPI framework with 4-6 indicators</li>
+                                    <li>Feedback loop design</li>
+                                    <li>How the project will continue beyond initial implementation</li>
+                                    <li>Youth leadership succession plan</li>
+                                </ul>
+                            </li>
+                            <li><strong>Visual Elements (included in page count):</strong>
+                                <ul style="margin-top: 0.5rem;">
+                                    <li>Systems map showing problem connections</li>
+                                    <li>Simple logic model or theory of change</li>
+                                    <li>KPI dashboard mockup</li>
+                                </ul>
+                            </li>
+                        </ol>
+                        <p style="margin-top: 1rem;"><strong>Presentation:</strong> Prepare a 5-minute pitch of your proposal for the first day of Module 2. Focus on problem significance, your innovative approach, and expected impact.</p>
+                        <p><strong>Purpose:</strong> This proposal demonstrates your mastery of Module 1 concepts and prepares you to hit the ground running with actual research in Module 2.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <footer class="footer">
+            <p>© 2025 Social Impact Program | Module 1: Foundations & Frameworks - Complete!</p>
+            <p>Questions? Contact: [Program Coordinator Email] | [Phone Number]</p>
+        </footer>
+    </div>
+    
+    <script>
+        function toggleSection(sectionId) {
+            const contentElement = document.getElementById(sectionId);
+            const parentCard = contentElement.parentElement;
+            const expandIcon = parentCard.querySelector('.expand-icon');
+            
+            if (contentElement.classList.contains('active')) {
+                contentElement.classList.remove('active');
+                expandIcon.textContent = '+';
+            } else {
+                contentElement.classList.add('active');
+                expandIcon.textContent = '−';
+            }
+        }
+        
+        function downloadPage() {
+            // Create a temporary link element
+            const link = document.createElement('a');
+            link.href = 'data:text/html;charset=utf-8,' + encodeURIComponent(document.documentElement.outerHTML);
+            link.download = 'Session4_GoalSetting_StrategicPlanning.html';
+            link.style.display = 'none';
+            
+            // Add to page, click, and remove
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    </script>
+</body>
+</html>
